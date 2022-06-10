@@ -50,7 +50,8 @@
           <!-- ============================================================== -->
           <div class="navbar-brand">
             <!-- Logo icon -->
-            <a href="index.html">
+            <a href="index.html" style="display: flex;margin-top:35px">
+
               <b class="logo-icon">
                 <!-- Dark Logo icon -->
                 <img src="<?= base_url('assets') ?>/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -59,11 +60,9 @@
               </b>
               <!--End Logo icon -->
               <!-- Logo text -->
-              <span class="logo-text">
+              <span class="logo-text mt-4 m-3">
                 <!-- dark Logo text -->
-                <img src="<?= base_url('assets') ?>/images/logo-text.png" alt="homepage" class="dark-logo" />
-                <!-- Light Logo text -->
-                <img src="<?= base_url('assets') ?>/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                <h1>Hotel</h1>
               </span>
             </a>
           </div>
