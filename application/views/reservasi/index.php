@@ -12,7 +12,7 @@
                   <th rowspan="2">No</th>
                   <th rowspan="2">No Kamar</th>
                   <th rowspan="2">Tipe Kamar</th>
-                  <th colspan="12">Pemakaian Per Tahun 2021</th>
+                  <th colspan="12">Pemakaian Per Tahun 2022</th>
                   <th rowspan="2">Jumlah Total</th>
 
                 </tr>
