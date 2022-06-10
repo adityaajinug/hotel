@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets') ?>/images/favicon.png">
-  <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+  <title><?= $title; ?></title>
   <!-- This page plugin CSS -->
   <link href="<?= base_url('assets') ?>/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom CSS -->
@@ -184,10 +184,9 @@
           </div>
           <div class="col-5 align-self-center">
             <div class="customize-input float-right">
-              <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                <option>Aug 19</option>
 
-              </select>
+              <span class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">Reservasi Hotel</span>
+
             </div>
           </div>
         </div>
@@ -207,7 +206,7 @@
       <!-- footer -->
       <!-- ============================================================== -->
       <footer class="footer text-center text-muted">
-        All Rights Reserved by Adminmart. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+        Hotel.id</a>
       </footer>
       <!-- ============================================================== -->
       <!-- End footer -->
