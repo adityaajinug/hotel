@@ -88,11 +88,7 @@
             <div class="form-group row">
               <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Status </label>
               <div class="col-sm-2">
-                <select class="form-control" id="exampleFormControlSelect1" name="status">
-                  <option value="IN">IN</option>
-                  <option value="OUT">OUT</option>
-
-                </select>
+                <input type="text" class="form-control" name="status" value="IN" readonly>
               </div>
             </div>
             <div class="form-group row">
