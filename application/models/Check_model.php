@@ -1,6 +1,4 @@
 <?php
-
-
 class Check_model extends CI_Model
 {
   public function getTamu()
@@ -23,5 +21,10 @@ class Check_model extends CI_Model
       ->join('tamu', 'tamu.id_tamu = check_in.id_tamu');
 
     return $this->db->get()->result_array();
+  }
+  public function hapus_checkin($id)
+  {
+    $this->db->where('no_checkin', $id);
+    $this->db->delete('check_in');
   }
 }

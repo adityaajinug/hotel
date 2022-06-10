@@ -44,8 +44,8 @@
 
 
                     <td>
-                      <a href="#" class="badge badge-pill badge-success" style="padding: 10px;">Check Out</a>
-                      <a href="#" class="badge badge-pill badge-danger" style="padding: 10px;">Delete</a>
+                      <a href="#" class="badge badge-pill badge-success" data-toggle="modal" data-target="#checkout-form<?= $check['no_checkin'] ?>" style="padding: 10px;">Check Out</a>
+                      <a href="<?= base_url('check_in/delete_checkin/' . $check['no_checkin']) ?>" class="badge badge-pill badge-danger" style="padding: 10px;" style="padding: 10px;">Delete</a>
                     </td>
 
                   </tr>
@@ -59,3 +59,38 @@
   </div>
 
 </div>
+
+<?php foreach ($check_in as $sc) : $sc++; ?>
+  <div id="checkout-form<?= $sc['no_checkin'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 10px;">
+        <div class="modal-body">
+          <div class="text-center mt-2 mb-4">
+            <i class="fas fa-question-circle" style="font-size: 120px;"></i>
+            <p class="mt-3" style="font-size: 24px;color:black;font-weight:600">Yakin Akan Checkout?</p>
+
+          </div>
+
+          <form action="<?= base_url('check_in/checkout') ?>" method="POST" class="pl-3 pr-3">
+
+            <div class="form-group">
+              <input class="form-control" type="hidden" name="status_checkin" value="OUT">
+              <input type="hidden" value="0" name="status_kamar">
+              <input type="hidden" value="<?= $sc['no_checkin'] ?>" name="no_checkin">
+              <input type="hidden" value="<?= $sc['no_kamar'] ?>" name="no_kamar">
+
+            </div>
+            <div class=" form-group text-center">
+              <button class=" btn btn-primary px-5 py-1" type="submit" style="border-radius:10px;">Ya</button>
+              <button class="btn btn-danger px-5 py-1" data-dismiss="modal" style="border-radius:10px;">Batal</button>
+            </div>
+          </form>
+
+          <p></p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endforeach; ?>

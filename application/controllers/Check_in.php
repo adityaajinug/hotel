@@ -63,4 +63,36 @@ class Check_in extends CI_Controller
     $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Check In Berhasil Ditambahkan!</div>');
     redirect('check_in');
   }
+  public function checkout()
+  {
+    $id_check = $this->input->post('no_checkin');
+    $id_kamar = $this->input->post('no_kamar');
+    $status_checkin = $this->input->post('status_checkin');
+    $status_kamar = $this->input->post('status_kamar');
+
+
+    $data = [
+      'status' => $status_checkin
+    ];
+    $this->db->where('no_checkin', $id_check);
+    $this->db->update('check_in', $data);
+
+
+    $data = [
+      'status' => $status_kamar
+    ];
+    $this->db->where('no_kamar', $id_kamar);
+    $this->db->update('kamar', $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Checkout Berhasil!</div>');
+    redirect('check_in');
+  }
+  public function delete_checkin()
+  {
+    $id =  $this->uri->segment(3);
+    $this->check->hapus_checkIn($id);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+      Data telah dihapus
+    </div>');
+    redirect('check_in');
+  }
 }
