@@ -132,13 +132,13 @@
 
     const listOption = containerKamar.querySelectorAll('option')
     containerKamar.onchange = () => {
-      tipe.value = listKamar[containerKamar.selectedIndex].tipe
-      biaya.value = listKamar[containerKamar.selectedIndex].harga
+      tipe.value = listKamar[containerKamar.selectedIndex - 1].tipe
+      biaya.value = listKamar[containerKamar.selectedIndex - 1].harga
 
-      totalBiaya.value = biaya.value = listKamar[containerKamar.selectedIndex].harga
+      totalBiaya.value = biaya.value = listKamar[containerKamar.selectedIndex - 1].harga
       biayaKamar.value = biaya.value * lamaInap.value
 
-
+      // console.log(listKamar[containerKamar.selectedIndex - 1].harga)
     }
     lamaInap.onchange = (e) => {
       if (biaya.value == '') {
@@ -155,7 +155,7 @@
       } else if (parseInt(e.target.value) == 0) {
         totalBiaya.value = biayaKamar.value
       } else {
-        totalBiaya.value = parseInt(biayaKamar.value) * parseInt(e.target.value)
+        totalBiaya.value = parseInt(biayaKamar.value) + parseInt(e.target.value)
       }
     }
 

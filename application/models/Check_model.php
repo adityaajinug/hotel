@@ -9,7 +9,11 @@ class Check_model extends CI_Model
   }
   public function getKamar()
   {
-    return $this->db->get('kamar')->result_array();
+    $this->db
+      ->select('kamar.*')
+      ->from('kamar')
+      ->where('kamar.status', 0);
+    return $this->db->get()->result_array();
   }
   public function getCheckIn()
   {
