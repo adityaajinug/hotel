@@ -31,8 +31,8 @@
                     <td><?= $t['telp'] ?></td>
 
                     <td>
-                      <a href="#" class="badge badge-pill badge-success" style="padding: 10px;">Edit</a>
-                      <a href="#" class="badge badge-pill badge-danger" style="padding: 10px;">Delete</a>
+                      <a href="<?= base_url('tamu/edit_tamu/' . $t['id_tamu']) ?>" class="badge badge-pill badge-success" style="padding: 10px;">Edit</a>
+                      <a href="<?= base_url('tamu/delete_tamu/' . $t['id_tamu']) ?>" class="badge badge-pill badge-danger" style="padding: 10px;">Delete</a>
                     </td>
 
                   </tr>
